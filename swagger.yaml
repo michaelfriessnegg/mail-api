@@ -1,0 +1,35 @@
+---
+swagger: "2.0"
+info:
+  $ref: ./api/info.yaml
+host: localhost
+basePath: /
+tags:
+  - name: Mail
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /mail/send:
+    x-swagger-router-controller: Mailer
+    put:
+      $ref: ./api/mail/sendMail.yaml
+definitions:
+  MailResponse:
+    type: object
+  ErrorResponse:
+    required:
+      - status
+      - code
+      - message
+    properties:
+      status:
+        type: integer
+      code:
+        type: integer
+      message:
+        type: string
+

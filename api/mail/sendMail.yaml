@@ -1,0 +1,29 @@
+tags:
+  - Mail
+description: |
+  sends an Email
+operationId: put
+consumes:
+  - application/x-www-form-urlencoded
+  - application/json
+parameters:
+  - name: receiver
+    in: formData
+    description: receiver of the email
+    required: true
+    type: string
+  - name: subject
+    in: formData
+    description: subject of the email
+    required: true
+    type: string
+  - name: message
+    in: formData
+    description: message of the email
+    required: true
+    type: string
+responses:
+  200:
+    description: Success
+    schema:
+      $ref: "#/definitions/MailResponse"
